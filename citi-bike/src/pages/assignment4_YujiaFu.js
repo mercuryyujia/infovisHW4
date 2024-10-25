@@ -30,7 +30,11 @@ const Charts = () => {
     const [month, setMonth] = React.useState('4');
     //Q1.5 define hooks to link the points and bars
     //Notes: you should define the hooks at the beginning of the component; a hook cannot be defined after the if ... else... statement;
-   
+    const [selectedStation, setSelectedStation] = useState(null);
+
+    const [tooltipData, setTooltipData] = useState(null);
+    const [tooltipX, setTooltipX] = useState(null);
+    const [tooltipY, setTooltipY] = useState(null);
     const dataAll = useData(csvUrl);
     if (!dataAll) {
         return <pre>Loading...</pre>;
